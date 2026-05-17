@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{NAME}} — Resume</title>
+<style>
+  /* ================================================================
+     Career-Ops Classic Resume Template
+     Matches the Foster MBA Resume Template formatting:
+     - Times New Roman throughout
+     - Centered name + contact line header
+     - Bold uppercase section titles with underline rule
+     - Company name (bold) + location on left, date range on right
+     - Italic bold role title
+     - Compact bullet lists
+     - Single page enforced
+     ================================================================ */
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: letter; margin: 0.4in 0.4in 0.3in 0.4in; }
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    line-height: 1.15;
+    color: #000;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* === HEADER — centered name + contact === */
+  .header { text-align: center; margin-bottom: 2pt; }
+  .header h1 {
+    font-size: 15pt; font-weight: bold;
+    text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 1pt;
+  }
+  .header .contact { font-size: 9.5pt; }
+
+  /* === SECTION TITLES — bold uppercase + underline === */
+  .section-title {
+    font-size: 10pt; font-weight: bold; text-transform: uppercase;
+    border-bottom: 1.5px solid #000;
+    padding-bottom: 0; margin-top: 4pt; margin-bottom: 2pt;
+  }
+
+  /* === EDUCATION === */
+  .edu-entry { margin-bottom: 1pt; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-header .left { font-weight: bold; font-size: 10pt; }
+  .entry-header .right { font-size: 10pt; white-space: nowrap; }
+  .degree { font-style: italic; font-weight: bold; font-size: 10pt; }
+
+  /* === EXPERIENCE === */
+  .job-entry { margin-bottom: 2pt; }
+  .company-line { display: flex; justify-content: space-between; align-items: baseline; }
+  .company-name { font-weight: bold; font-size: 10pt; }
+  .company-location { font-weight: normal; }
+  .date-range { font-size: 10pt; white-space: nowrap; }
+  .role-title { font-style: italic; font-weight: bold; font-size: 10pt; margin-bottom: 0; }
+
+  /* === BULLETS === */
+  ul { padding-left: 15pt; margin: 0; }
+  li { font-size: 9.5pt; line-height: 1.15; margin-bottom: 0pt; }
+
+  /* === SUB-ROLES (e.g. multiple roles at same company) === */
+  .sub-role { font-style: italic; font-weight: bold; font-size: 10pt; margin-top: 1pt; margin-bottom: 0; }
+
+  @media print { body { padding: 0; margin: 0; } }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>{{NAME}}</h1>
+    <div class="contact">{{CONTACT_LINE}}</div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section-title">Education</div>
+  {{EDUCATION}}
+
+  <!-- EXPERIENCE -->
+  <div class="section-title">Experience</div>
+  {{EXPERIENCE}}
+
+  <!-- SKILLS AND ACTIVITIES -->
+  <div class="section-title">Skills and Activities</div>
+  <ul>
+    {{SKILLS}}
+  </ul>
+
+</body>
+</html>

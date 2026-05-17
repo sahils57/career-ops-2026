@@ -38,6 +38,9 @@ Sección de **gaps** con estrategia de mitigación para cada uno. Para cada gap:
 3. ¿Hay un proyecto portfolio que cubra este gap?
 4. Plan de mitigación concreto (frase para cover letter, proyecto rápido, etc.)
 
+**REGLA CRÍTICA DE EXPERIENCIA:**
+Si el Job Description exige **10 o más años de experiencia**, DEBES rankear el 'Match con CV' en **2/5 o menos**. Esto forzará que el Score Global de la oferta nunca alcance o supere el umbral de 4.0, protegiendo el cap esperado de 6-8 años de experiencia.
+
 ## Bloque C — Nivel y Estrategia
 
 1. **Nivel detectado** en el JD vs **nivel natural del candidato para ese arquetipo**

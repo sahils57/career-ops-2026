@@ -42,6 +42,8 @@ The evaluation uses 6 blocks (A-F) with a global score of 1-5:
 - 3.5-3.9 → Decent but not ideal, apply only if specific reason
 - Below 3.5 → Recommend against applying (see Ethical Use in CLAUDE.md)
 
+**HARD RULE:** If the JD demands 10+ years of experience, automatically force the "Match con CV" score to 2/5 or lower. This guarantees the Global score remains below 4.0, as the candidate's target is strictly Mid-to-Senior (capped at 6-8 years).
+
 ## Posting Legitimacy (Block G)
 
 Block G assesses whether a posting is likely a real, active opening. It does NOT affect the 1-5 global score -- it is a separate qualitative assessment.
