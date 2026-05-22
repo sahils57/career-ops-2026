@@ -36,9 +36,10 @@ Copy from `templates/portals.example.yml` and customize:
 ## CV Template (templates/cv-template.html)
 
 The HTML template uses these design tokens:
-- **Fonts**: Space Grotesk (headings) + DM Sans (body) -- self-hosted in `fonts/`
-- **Colors**: Cyan primary (`hsl(187,74%,32%)`) + Purple accent (`hsl(270,70%,45%)`)
-- **Layout**: Single-column, ATS-optimized
+- **Fonts**: Times New Roman throughout
+- **Colors**: black text on white background
+- **Layout**: single-column, compact, ATS-optimized, designed to match Sahil's March 2026 GTM PDF
+- **Section styling**: bold uppercase section titles with thin underline rules; bold subsection names and bold italic role/degree lines
 
 To customize fonts/colors, edit the CSS in the template. Update font files in `fonts/` if switching fonts.
 

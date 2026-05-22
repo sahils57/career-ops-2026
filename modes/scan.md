@@ -22,6 +22,14 @@ Leer `portals.yml` que contiene:
 - `search_queries`: Lista de queries WebSearch con `site:` filters por portal (descubrimiento amplio)
 - `tracked_companies`: Empresas específicas con `careers_url` para navegación directa
 - `title_filter`: Keywords positive/negative/seniority_boost para filtrado de títulos
+- `location_filter`: Keywords positive/negative para filtrar ubicaciones expuestas por API. Si una oferta no trae ubicación, no se descarta en scan; se decide en pipeline.
+
+Para Sahil, `portals.yml` debe permanecer enfocado en:
+- Product Manager, Technical Product Manager, Product Operations, Product Strategy, AI Product, Platform Product, Product Growth.
+- GTM Strategy, Strategy & Operations, Business Operations, RevOps, Pricing/Packaging/Monetization, AI Strategy.
+- Tech companies, AI/software/SaaS/platform/data companies, and tech-enabled marketplaces.
+- Seattle and Remote first; Boston only if especially strong.
+- Do not use LinkedIn for bulk scraping. LinkedIn is supervised assist only: discover/review jobs in the logged-in browser, then add public/company URLs to `data/pipeline.md`.
 
 ## Estrategia de descubrimiento (3 niveles)
 
@@ -108,6 +116,12 @@ Los niveles son aditivos — se ejecutan todos, los resultados se mezclan y dedu
    - Al menos 1 keyword de `positive` debe aparecer en el título (case-insensitive)
    - 0 keywords de `negative` deben aparecer
    - `seniority_boost` keywords dan prioridad pero no son obligatorios
+   - Este filtro solo ve titles; the 8+ years experience cutoff must be enforced later when the full JD is extracted in pipeline/auto-pipeline.
+
+6.5. **Filtrar por ubicación** usando `location_filter` de `portals.yml`:
+   - Mantener Seattle, Remote, US/North America, Boston, and strong US tech hubs for review.
+   - Descartar international-only locations such as EMEA/Europe/India/UK unless the role is explicitly Remote US/North America.
+   - Si la API no proporciona ubicación, conservar la oferta and let pipeline evaluation decide.
 
 7. **Deduplicar** contra 3 fuentes:
    - `scan-history.tsv` → URL exacta ya vista

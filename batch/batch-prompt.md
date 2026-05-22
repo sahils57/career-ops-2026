@@ -237,7 +237,8 @@ node generate-pdf.mjs \
   output/cv-candidate-{company-slug}-{{DATE}}.pdf \
   --format={letter|a4}
 ```
-14. Reporta: ruta PDF, nº páginas, % cobertura keywords
+14. El PDF es el entregable principal; Markdown/HTML son soporte. No terminar una personalización sin generar el PDF.
+15. Reporta: ruta PDF, nº páginas, % cobertura keywords
 
 **Reglas ATS:**
 - Single-column (sin sidebars)
@@ -248,14 +249,15 @@ node generate-pdf.mjs \
 - Keywords distribuidas: Summary (top 5), primer bullet de cada rol, Skills section
 
 **Diseño:**
-- Fonts: Space Grotesk (headings, 600-700) + DM Sans (body, 400-500)
-- Fonts self-hosted: `fonts/`
-- Header: Space Grotesk 24px bold + gradiente cyan→purple 2px + contacto
-- Section headers: Space Grotesk 13px uppercase, color cyan `hsl(187,74%,32%)`
-- Body: DM Sans 11px, line-height 1.5
-- Company names: purple `hsl(270,70%,45%)`
-- Márgenes: 0.6in
-- Background: blanco
+- Default template: `templates/cv-template.html`, matching Sahil's March 2026 GTM PDF.
+- Fonts: Times New Roman throughout.
+- Header: centered uppercase name + compact contact row.
+- Section headers: bold uppercase black text with a thin underline rule.
+- Subsections: bold company/school names; bold italic role/degree lines; dates right-aligned.
+- Body: compact black text, single-column ATS-safe layout, tight bullets.
+- Márgenes: compact letter-page resume margins.
+- Background: blanco.
+- Space use: keep it one page, but fill the page with strong, truthful work examples. Prioritize recent KPMG/Amazon work, then include earlier promotion/progression evidence when it strengthens the story.
 
 **Estrategia keyword injection (ético):**
 - Reformular experiencia real con vocabulario exacto del JD

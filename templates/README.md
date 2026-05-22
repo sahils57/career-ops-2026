@@ -15,9 +15,15 @@ System-layer template files used by career-ops scripts and modes. These files ar
 
 The HTML template rendered by Playwright into PDF. Uses placeholder tokens (`{{NAME}}`, `{{SUMMARY_TEXT}}`, `{{EXPERIENCE}}`, etc.) that the PDF pipeline fills at generation time.
 
-**Design:** Space Grotesk headings + DM Sans body, single-column ATS-safe layout, self-hosted fonts from `fonts/`.
+**Design:** Classic one-page resume matching Sahil's March 2026 GTM PDF: Times New Roman, centered header, bold uppercase section headers with underline rules, bold subsection headings, readable spacing between job roles, and compact ATS-safe bullets.
+
+**Density rule:** Preserve role-to-role breathing room as part of the template's visual system. When a tailored resume is too dense or exceeds one page, reduce or combine older-role bullets before tightening spacing, margins, or font size.
 
 **Customization:** Edit this file to change colors, spacing, or section order. The placeholder tokens are documented in `batch/batch-prompt.md` under "Template placeholders."
+
+### cv-template-classic.html
+
+Compatibility alias for the default classic design. The active PDF workflow reads `cv-template.html`; keep both files aligned if changing the visual system.
 
 ### cv-template.tex
 

@@ -15,11 +15,13 @@
 9. Reordena bullets de experiencia por relevancia al JD
 10. Construye competency grid desde requisitos del JD (6-8 keyword phrases)
 11. Inyecta keywords naturalmente en logros existentes (NUNCA inventa)
-12. Genera HTML completo desde template + contenido personalizado
-13. Lee `name` de `config/profile.yml` → normaliza a kebab-case lowercase (e.g. "John Doe" → "john-doe") → `{candidate}`
-14. Escribe HTML a `/tmp/cv-{candidate}-{company}.html`
-15. Ejecuta: `node generate-pdf.mjs /tmp/cv-{candidate}-{company}.html output/cv-{candidate}-{company}-{YYYY-MM-DD}.pdf --format={letter|a4}`
-15. Reporta: ruta del PDF, nº páginas, % cobertura de keywords
+12. If the tailored resume overflows, trim from older roles first, especially lower-relevance J.S. Held/Perry bullets, before reducing role spacing or shrinking typography.
+13. Genera HTML completo desde template + contenido personalizado
+14. Lee `name` de `config/profile.yml` → normaliza a kebab-case lowercase (e.g. "John Doe" → "john-doe") → `{candidate}`
+15. Escribe HTML a `/tmp/cv-{candidate}-{company}.html`
+16. Ejecuta: `node generate-pdf.mjs /tmp/cv-{candidate}-{company}.html output/cv-{candidate}-{company}-{YYYY-MM-DD}.pdf --format={letter|a4}`
+17. El PDF es el entregable principal. Markdown/HTML son artefactos de soporte, pero cada resume final debe existir en PDF.
+18. Reporta: ruta del PDF, nº páginas, % cobertura de keywords
 
 ## Reglas ATS (parseo limpio)
 
@@ -33,23 +35,35 @@
 
 ## Diseño del PDF
 
-- **Fonts**: Space Grotesk (headings, 600-700) + DM Sans (body, 400-500)
-- **Fonts self-hosted**: `fonts/`
-- **Header**: nombre en Space Grotesk 24px bold + línea gradiente `linear-gradient(to right, hsl(187,74%,32%), hsl(270,70%,45%))` 2px + fila de contacto
-- **Section headers**: Space Grotesk 13px, uppercase, letter-spacing 0.05em, color cyan primary
-- **Body**: DM Sans 11px, line-height 1.5
-- **Company names**: color accent purple `hsl(270,70%,45%)`
-- **Márgenes**: 0.6in
-- **Background**: blanco puro
+- **Template default:** `templates/cv-template.html`, styled to match Sahil's March 2026 GTM resume.
+- **Fonts:** Times New Roman throughout.
+- **Header:** centered uppercase name + compact contact row.
+- **Section headers:** bold uppercase black text with a thin black underline rule.
+- **Subsections:** company/school names bold; role/degree lines bold italic; dates right-aligned.
+- **Body:** compact single-column ATS-safe layout, tight bullets, black text only.
+- **Márgenes:** compact letter-page resume margins.
+- **Background:** blanco puro.
+- **Space use:** prefer a full, one-page resume. Use the strongest truthful bullets from recent roles first, then preserve earlier promotion/progression evidence when relevant.
+- **Comprehensiveness:** a final resume should not leave obvious unused space at the bottom. If the first pass has significant whitespace, add more truthful JD-relevant bullets from the bullet bank before shrinking or changing layout. Keep it one page, but make the page feel complete.
+- **Role spacing priority:** keep visible breathing room between job roles in the classic template. If a resume becomes too dense or spills beyond one page, preserve template readability first and reduce/condense bullets from older roles before tightening global spacing, margins, or font size.
+- **Truthful adjacency:** JD keywords are prompts for framing, not permission to invent expertise. If the role asks for experience Sahil only partially or adjacently has, use broader truthful language and supported proof points instead of claiming direct ownership of that function.
+
+## Reglas de tailoring por tipo de rol
+
+- **Product Manager / Product Strategy / Product Operations / Technical PM:** make product evidence show up first. Prioritize Amazon Alexa AI PM, ML scientist/customer discovery, data lifecycle roadmap, data-storage abstraction, KPMG AI/product roadmap work, product matching engine, PRD/technical requirements, user journeys, customer requirements, and cross-functional roadmap execution.
+- **GTM / Strategy / Business Operations:** lead with KPMG GTM strategy, sales model redesign, pricing/monetization, revenue analytics, operating model, product/GTM tooling, and executive roadmap evidence.
+- **AI Product / AI Strategy:** combine product evidence with AI use-case prioritization, LLM product matching, AI transformation roadmap, value sizing, and customer/user discovery.
+- **Experience-level positioning:** do not frame Sahil for roles requiring 8+ years. If the JD requires 8+ years, recommend no-apply before generating a resume. If 8+ is only preferred and the role is exceptional, keep the resume manager/senior-manager scoped, not director/executive scoped.
+- **Location and company fit:** emphasize Seattle/Remote fit and tech-company/product-business relevance when truthful.
 
 ## Orden de secciones (optimizado "6-second recruiter scan")
 
-1. Header (nombre grande, gradiente, contacto, link portfolio)
+1. Header (nombre centrado, contacto)
 2. Professional Summary (3-4 líneas, keyword-dense)
-3. Core Competencies (6-8 keyword phrases en flex-grid)
-4. Work Experience (cronológico inverso)
-5. Projects (top 3-4 más relevantes)
-6. Education & Certifications
+3. Core Competencies (6-8 keyword phrases inline)
+4. Education
+5. Work Experience (cronológico inverso)
+6. Projects / Certifications, solo si aportan valor al JD
 7. Skills (idiomas + técnicos)
 
 ## Estrategia de keyword injection (ético, basado en verdad)
@@ -60,6 +74,7 @@ Ejemplos de reformulación legítima:
 - JD dice "stakeholder management" y CV dice "collaborated with team" → cambiar a "stakeholder management across engineering, operations, and business"
 
 **NUNCA añadir skills que el candidato no tiene. Solo reformular experiencia real con el vocabulario exacto del JD.**
+For adjacent-fit language, prefer truthful bridges over exact keyword copying. Example: if the JD says "category management" or "partner enablement" and Sahil has not owned those functions, frame around "commercial strategy," "GTM planning," "pricing/offer analysis," "customer insights," "cross-functional execution," or "performance analytics" only where the bullets substantiate it.
 
 ## Template HTML
 

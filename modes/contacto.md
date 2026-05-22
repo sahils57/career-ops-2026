@@ -6,6 +6,11 @@
    - 2-3 peers del equipo (gente con rol similar)
    - Interviewer (si el candidato ya tiene entrevista programada)
 
+   For Sahil's startup/scaleup searches, also use targeted LinkedIn Assist in the logged-in browser:
+   - Query patterns: `{company} recruiter`, `{company} talent acquisition`, `{company} business operations`, `{company} product operations`, `{company} strategy operations`, `{company} product manager`, `{company} revenue operations`.
+   - Do not bulk scrape LinkedIn. Inspect only enough results to choose 1-3 likely contacts.
+   - Save the target, role, LinkedIn URL, why they are relevant, and message draft in `data/outreach-targets.md`.
+
 2. **Clasificar tipo de contacto** -- preguntar al candidato o inferir del contexto:
    - **Recruiter** -- persona cuyo rol es talent acquisition, sourcing, o recruiting
    - **Hiring Manager** -- la persona que lidera el equipo que contrata
@@ -43,6 +48,10 @@
    - ES (si empresa espanola)
 
 6. **Targets alternativos** con justificacion de por que son buenos second choices
+
+7. **Guardar resultado**:
+   - Append/update `data/outreach-targets.md`.
+   - For high-priority startup roles, include at least one recruiter/talent target and one operator/peer/hiring-manager target when discoverable.
 
 **Reglas del mensaje:**
 - Maximo 300 caracteres (LinkedIn connection request limit)

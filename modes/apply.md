@@ -20,6 +20,19 @@ Modo interactivo para cuando el candidato está rellenando un formulario de apli
 8. PRESENTAR   → Mostrar respuestas formateadas para copy-paste
 ```
 
+## Guardrail de envío
+
+Este modo es semi-automatizado. Puede leer formularios, draft answers, suggest dropdown selections, and help fill visible fields when Sahil is reviewing the page. **Never click Submit/Apply/Send or any final confirmation. Stop before the final submission and ask Sahil to review and click.**
+
+## Fit check antes de aplicar
+
+Antes de preparar respuestas, confirmar contra el report/JD:
+- Score >= 4.5, or Sahil explicitly overrides.
+- No hard requirement for 8+ years of experience.
+- Role is in-scope: PM/Product Strategy/Product Ops/Technical PM/AI Product, GTM Strategy, Business Operations, RevOps, Pricing/Monetization, AI Strategy.
+- Location is Seattle/Remote, or Boston/other location is explicitly acceptable for this role.
+- If any check fails, warn Sahil and recommend not applying before drafting answers.
+
 ## Paso 1 — Detectar la oferta
 
 **Con Playwright:** Tomar snapshot de la página activa. Leer título, URL, y contenido visible.
